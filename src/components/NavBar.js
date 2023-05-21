@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { SocialIcon, socialIcon } from "react-social-icons";
+import { SocialIcon } from "react-social-icons";
 
 export default function NavBar() {
     return (
