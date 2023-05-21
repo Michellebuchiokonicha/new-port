@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import sanityClient from "../client.js";
+import createClient from "../client.js";
 import imageUrlBuilder from "@sanity/image-url";
 import BlockContent from "@sanity/block-content-to-react";
 
-const builder = imageUrlBuilder(sanityClient);
+const builder = imageUrlBuilder(createClient);
 function urlFor(source) {
     return builder.image(source)
 }
@@ -14,7 +14,7 @@ export default function SinglePost() {
     const { slug } = useParams();
 
     useEffect(() => {
-        sanityClient.fetch(`*[slug.current == "${slug}"]{
+        createClient.fetch(`*[slug.current == "${slug}"]{
             title,
             _id,
             slug,
